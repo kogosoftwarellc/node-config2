@@ -1,7 +1,7 @@
 {
   "name": "config2",
   "main": "lib/config2.js",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Simple env config handling for the browser and node.",
   "author": "Joseph Spencer",
   "scripts": {
