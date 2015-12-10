@@ -7,7 +7,7 @@
 * Uses `window.NODE_ENV` in browsers.
 * Uses `process.env.NODE_ENV` in node.
 * Env specific config overrides default config.
-* Able to override env specific and default config with environment variables.
+* Use environment variables to override env conf and defaults.
 
 ## Installation
 
@@ -49,7 +49,7 @@ config.someObject.someValue // 6
 
 ```
 
-### Overriding the environment config at run time.
+### Overriding values at run time.
 
 ```javascript
 // assuming SOME_VALUE was set to "8" in your environment.

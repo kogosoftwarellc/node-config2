@@ -78,6 +78,10 @@ test = 'envOverride should override defaultConfig';
 envOverride.whoa = 2;
 assert.equal(config(defaultConfig, envs, envOverride).whoa, 2, test);
 
+test = 'it should not override if undefined';
+envOverride.foo = undefined;
+assert.equal(config(defaultConfig, envs, envOverride).foo, 3, test);
+
 // FINALLY it should use window when process.env is not available.
 delete process.env;
 global.window = {NODE_ENV: 'development'};
