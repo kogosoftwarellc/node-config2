@@ -12,7 +12,18 @@
     "type": "git",
     "url": "https://github.com/kogosoftwarellc/node-config2.git"
   },
-  "keywords": [],
+  "keywords": [
+    "config-browser",
+    "browser config",
+    "environment",
+    "env",
+    "config-node",
+    "node-config",
+    "configuration",
+    "config",
+    "conf",
+    "simple config"
+  ],
   "contributors": [],
   "license": "MIT",
   "bugs": {

@@ -1,7 +1,69 @@
 # config2 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url]
 > Simple env config handling for the browser and node.
 
-##LICENSE
+## Highlights
+
+* No getters/setters.
+* Uses `window.NODE_ENV` in browsers.
+* Uses `process.env.NODE_ENV` in node.
+* Env specific config overrides default config.
+* Able to override env specific and default config with environment variables.
+
+## Installation
+
+`config2` requires lodash as a peerDependency, so you'll want to have it handy:
+
+```
+npm install config2 lodash --save
+
+```
+
+## Usage
+
+```javascript
+var config2 = require('config2');
+
+var defaultConfig = {
+  someObject: {
+    someOtherValue: 5
+  }
+};
+
+var envConfig = {
+  development: {
+    someObject: {
+      someValue: 6
+    }
+  },
+  production: {
+    someObject: {
+      someValue: 7
+    }
+  }
+};
+
+var config = config2(defaultConfig, envConfig);
+// assuming NODE_ENV is set to 'development';
+config.someObject.someOtherValue // 5
+config.someObject.someValue // 6
+
+```
+
+### Overriding the environment config at run time.
+
+```javascript
+// assuming SOME_VALUE was set to "8" in your environment.
+var envOverrides = {
+  someObject: {
+    someValue: process.env.SOME_VALUE
+  }
+};
+
+var config = config(defaultConfig, envConfig, envOverrides);
+config.someObject.someValue // 8
+```
+
+## LICENSE
 ``````
 The MIT License (MIT)
 
