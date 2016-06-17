@@ -1,7 +1,8 @@
 module.exports = getConfig;
 
-var isPlanObject = require('lodash/lang/isPlainObject');
-var merge = require('lodash/object/merge');
+var _ = require('lodash');
+var isPlanObject = _.isPlainObject;
+var merge = _.merge;
 
 /**
  * Returns a config object most appropriate for your environment.  The object

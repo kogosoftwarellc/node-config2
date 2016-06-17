@@ -25,6 +25,7 @@ var envOverride = {
 
 var test;
 
+delete process.env.NODE_ENV;
 // Without NODE_ENV
 test = 'should throw when too few arguments are given';
 assert.throws(function() {
